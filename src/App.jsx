@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 const C = {
-  bg: '#0d0d0d', bgPanel: '#111111', bgInput: '#1a1a1a', border: '#2a2a2a',
+  bg: '#1e1e1e', bgPanel: '#252526', bgInput: '#2d2d2d', border: '#3e3e3e',
   amber: '#f0a500', amberFade: '#3a2800', green: '#22c55e', red: '#ef4444',
-  muted: '#555555', text: '#d4d4d4',
+  muted: '#999999', text: '#e8e8e8', scrollbar: '#4a4a4a',
   font: "'JetBrains Mono','Fira Code','Cascadia Code','Courier New',monospace",
 }
 const API_URL    = 'https://api.anthropic.com/v1/messages'
@@ -64,13 +64,13 @@ const SYSTEM_D = `You are a Strategic Synthesiser. Given compact summaries of OS
 ;(function injectCSS() {
   const style = document.createElement('style')
   style.textContent = `
-    html, body, #root { height: 100%; background: #0d0d0d; color: #d4d4d4; margin: 0; }
+    html, body, #root { height: 100%; background: #1e1e1e; color: #e8e8e8; margin: 0; font-size: 14px; }
     body { overflow: hidden; display: block !important; place-items: unset !important; }
     * { box-sizing: border-box; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #111111; }
-    ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+    ::-webkit-scrollbar-track { background: #252526; }
+    ::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #5a5a5a; }
     textarea:focus, input:focus { outline: 1px solid #f0a500 !important; }
     button { font-family: 'JetBrains Mono','Fira Code','Cascadia Code','Courier New',monospace; }
     @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
@@ -208,9 +208,9 @@ function AgentPanel({ agentId, agent, onRetry, retryDisabled, copyFlash, onCopy 
           <pre style={{
             margin: 0,
             fontFamily: C.font,
-            fontSize: 12,
+            fontSize: 13,
             lineHeight: 1.6,
-            color: C.amber,
+            color: '#f0e6c8',
             whiteSpace: 'pre-wrap',
             wordBreak: 'break-word',
           }}>
